@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="todo-list">
+  <app-todo-form (todoAdded)="onTodoAdded($event)"></app-todo-form>
+
+  <div class="filters">
+    <button 
+      (click)="setFilter('all')" 
+      [class.active]="filter === 'all'"
+      class="filter-btn">
+      Все ({{ stats.total }})
+    </button>
+    <button 
+      (click)="setFilter('active')" 
+      [class.active]="filter === 'active'"
+      class="filter-btn">
+      Активные ({{ stats.active }})
+    </button>
+    <button 
+      (click)="setFilter('completed')" 
+      [class.active]="filter === 'completed'"
+      class="filter-btn">
+      Завершенные ({{ stats.completed }})
+    </button>
+  </div>
+
+  <div class="todos-container">
+    <div *ngIf="filteredTodos.length === 0" class="empty-state">
+      <!-- {{ getEmptyStateMessage() }} -->
+    </div>
+
+    <app-todo-item 
+      *ngFor="let todo of filteredTodos"
+      [todo]="todo"
+      (toggle)="onTodoToggled($event)"
+      (edit)="onTodoEdited($event)"
+      (delete)="onTodoDeleted($event)">
+    </app-todo-item>
+  </div>
+</div>
+</body>
+</html>

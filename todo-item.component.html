@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="todo-item" [class.completed]="todo.completed" [class.overdue]="isOverdue()">
+  <div class="todo-content">
+    <div class="todo-header">
+      <input 
+        type="checkbox" 
+        [checked]="todo.completed" 
+        (change)="onToggle()"
+        class="todo-checkbox">
+      <h3 class="todo-title">{{ todo.title }}</h3>
+    </div>
+    
+    <p *ngIf="todo.description" class="todo-description">
+      {{ todo.description }}
+    </p>
+    
+    <div class="todo-meta">
+      <span class="created-at">
+        Создано: {{ todo.createdAt | date:'dd.MM.yyyy HH:mm' }}
+      </span>
+      <span *ngIf="todo.dueDate" class="due-date" [class.overdue]="isOverdue()">
+        Срок: {{ todo.dueDate | date:'dd.MM.yyyy' }}
+      </span>
+    </div>
+  </div>
+  
+  <div class="todo-actions">
+    <button (click)="onEdit()" class="btn btn-edit" title="Редактировать">
+      ✏️
+    </button>
+    <button (click)="onDelete()" class="btn btn-delete" title="Удалить">
+      🗑️
+    </button>
+  </div>
+</div>
+</body>
+</html>

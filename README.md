@@ -9,7 +9,10 @@
 _node -v_
 
 Если NodeJS нет, то устанавливаем следующими командами в терминале:
+```bash
 <img width="759" height="169" alt="image" src="https://github.com/user-attachments/assets/91ef9335-19ec-403d-8055-2010c6597679" />
+
+```
 
 Чтобы установить непосредственно Angular нужно ввести команду в терминал VScode:
 

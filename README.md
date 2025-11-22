@@ -10,38 +10,104 @@ _node -v_
 
 Если NodeJS нет, то устанавливаем следующими командами в терминале:
 ```bash
-<img width="759" height="169" alt="image" src="https://github.com/user-attachments/assets/91ef9335-19ec-403d-8055-2010c6597679" />
+docker pull node:25-alpine
+
+docker run -it --rm --entrypoint sh node:25-alpine
 
 ```
 
 Чтобы установить непосредственно Angular нужно ввести команду в терминал VScode:
 
+```bash
 _npm install -g @angular/cli_
-
+```
 
 Для создания нового проекта следующая команда:
 
+```bash
 _ng new <name-project>_
+```
 
 Далее вводим название проекта, настраиваем как душе угодно, только в стилях выбираем CSS.
 Следующим шагом шагом подключаемся к проекту по команде:
 
+```bach
 _cd <название_проекта>_
+```
 
 И для запуска проекта вводим:
 
+```bach
 _npm start_
-
-
-# Пример кода.
-
-<img width="671" height="784" alt="image" src="https://github.com/user-attachments/assets/9fc9795f-81f7-4f3e-9c50-3d955b4d2443" />
-
+```
 
 # Структура файла.
-<img width="368" height="740" alt="image" src="https://github.com/user-attachments/assets/d695d5cc-838f-4c24-b07d-69227a81b7b5" />
 
-В Component структура файлов одинаковая, отличаются лишь названия, поэтому был показан только один из компонентов.
+ app    |
+
+        | - components |
+        
+        |              | - todo-form  |
+        
+        |              |              | - todo-form-component.ts
+        
+        |              |              | - todo-form.html
+        
+        |              |              | - todo-form. css
+        
+        |              | - todo-item  | 
+        
+        |              |              | - todo-item-component.ts
+        
+        |              |              | - todo-item.html
+        
+        |              |              | - todo-item.css
+        
+        |              | - todo-list  |
+        
+        |              |              | - todo.list-component.ts
+        
+        |              |              | - tod-list.html
+        
+        |              |              | - todo-list.css
+        
+        | - models  |
+        
+        |           | - todo-models.ts
+        
+        | - pages   |
+        
+        |           | - about|
+        
+        |                    | - about.components.ts
+        
+        |           | - home | - home.component.ts
+        
+        |           | index.js
+        
+        | - services |
+        
+        |            | - services.ts
+        
+        | - app.routing.module.ts
+        
+        | - app.component.css
+        
+        | - app.component.ts
+        
+        | - app.config.ts
+        
+        | - app.css
+        
+        | - app.html
+        
+        | - app.module.ts
+        
+        | - app.route.ts
+        
+        | - app.spec.ts
+        
+        | - app.ts
 
 # Технические требования.
 Использование следующем языке программирования:

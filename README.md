@@ -136,3 +136,5 @@ _npm start_
 Все отчеты о тестировании находятся в папке "testing".
 
 Улучшения не были внесены в виду того, что критики не было, как и указаний на какие-либо ошибки.
+
+**Ссылка на прохождение опроса:** https://docs.google.com/forms/d/e/1FAIpQLSf_-TbhYSTrkJNCJPy6SfwFLLlhC-OJ3K7uhBFSn3aUMzaNfw/viewform
